@@ -6,7 +6,8 @@ ADD . /usr/src/app
 WORKDIR /usr/src/app
 
 ENV LANG C.UTF-8
-RUN apk add --no-cache --virtual .build-deps g++ gcc linux-headers libc-dev bash curl libffi-dev openssl-dev && \
+RUN apk update && \
+    apk add --no-cache --virtual .build-deps g++ gcc linux-headers libc-dev bash curl libffi-dev openssl-dev && \
     apk add --no-cache python3 py3-pip && \
     pip3 install --upgrade setuptools
 RUN pip3 install -r requirements.txt
