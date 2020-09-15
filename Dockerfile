@@ -11,4 +11,4 @@ RUN pip3 install --upgrade pip
 RUN pip3 install -U setuptools
 RUN pip3 install -r requirements.txt
 
-EXPOSE 8545 8546 30303 30303/udp
+EXPOSE 8000 8545 8546 30303 30303/udp
