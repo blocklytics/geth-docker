@@ -11,6 +11,6 @@ RUN apk add --no-cache nodejs-current  --repository="http://dl-cdn.alpinelinux.o
 RUN apk add --no-cache npm
 RUN npm install
 
-CMD node index.js
-
 EXPOSE 8081 8545 8546 30303 30303/udp
+
+CMD node index.js
