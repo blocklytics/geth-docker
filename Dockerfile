@@ -11,7 +11,7 @@ RUN apk update && \
     ln -s /usr/include/locale.h /usr/include/xlocale.h && \
     curl -X PURGE https://pypi.org/simple/rusty-rlp/
 
-RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade pip3
 RUN pip3 install -U setuptools
 RUN pip3 install rusty-rlp --no-cache-dir --index-url https://pypi.org/simple/rusty-rlp/
 
