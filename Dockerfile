@@ -7,8 +7,9 @@ WORKDIR /usr/src/app
 
 ENV LANG C.UTF-8
 RUN apk update && \
-    apk add --no-cache ca-certificates python3 python3-dev gcc linux-headers libc-dev bash curl && \
-    apk add --no-cache py3-pip
+    apk add --no-cache ca-certificates python3 python3-dev py3-pip gcc g++ linux-headers libc-dev libstdc++ bash curl && \
+    ln -s /usr/include/locale.h /usr/include/xlocale.h
+
 RUN pip3 install -r requirements.txt
 
 EXPOSE 8000 8545 8546 30303 30303/udp

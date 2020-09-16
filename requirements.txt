@@ -1,3 +1,4 @@
-web3==5.12.1
+rusty-rlp
+web3
 Flask==1.1.2
 gunicorn==20.0.4
