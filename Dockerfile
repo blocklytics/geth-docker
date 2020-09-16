@@ -12,5 +12,4 @@ RUN apk add --no-cache npm supervisor
 RUN npm install
 
 COPY supervisord.conf /etc/supervisord.conf
-
 EXPOSE 8081 8545 8546 30303 30303/udp
