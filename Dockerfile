@@ -8,8 +8,10 @@ WORKDIR /usr/src/app
 ENV LANG C.UTF-8
 RUN apk update && \
     apk add --no-cache ca-certificates python3 python3-dev py3-pip gcc g++ linux-headers libc-dev libstdc++ bash curl && \
-    ln -s /usr/include/locale.h /usr/include/xlocale.h && \
-    pip3 install -U setuptools
+    ln -s /usr/include/locale.h /usr/include/xlocale.h
+
+RUN pip3 install --upgrade pip
+RUN pip3 install -U setuptools
 
 RUN pip3 install -r requirements.txt
 
