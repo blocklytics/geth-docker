@@ -8,9 +8,9 @@ WORKDIR /usr/src/app
 ENV ALPINE_MIRROR "http://dl-cdn.alpinelinux.org/alpine"
 RUN echo "${ALPINE_MIRROR}/edge/main" >> /etc/apk/repositories
 RUN apk add --no-cache nodejs-current  --repository="http://dl-cdn.alpinelinux.org/alpine/edge/community"
-RUN apk add --no-cache npm
+RUN apk add --no-cache npm supervisor
 RUN npm install
 
-EXPOSE 8081 8545 8546 30303 30303/udp
+COPY supervisord.conf /etc/supervisord.conf
 
-CMD node index.js
+EXPOSE 8081 8545 8546 30303 30303/udp
