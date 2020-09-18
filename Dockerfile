@@ -1,10 +1,6 @@
-FROM node:12-alpine
+FROM ethereum/client-go:v1.9.21
 
-USER root
-ADD . /usr/src/app
-WORKDIR /usr/src/app
+COPY health.sh /usr/local/bin/
 
-RUN npm install
-EXPOSE 8080
-
-CMD ["node", "server.js"]
+RUN apk update
+RUN apk add --no-cache jq
