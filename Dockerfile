@@ -1,4 +1,4 @@
-FROM ethereum/client-go:v1.9.21
+FROM ethereum/client-go:v1.9.24
 
 COPY is-geth-synchronized.sh /usr/local/bin/
 RUN ["chmod", "+x", "/usr/local/bin/is-geth-synchronized.sh"]
